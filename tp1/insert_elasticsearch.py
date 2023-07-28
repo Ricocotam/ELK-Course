@@ -18,7 +18,7 @@ def format_chapter(book_name, chapt, chapt_cont):
 
 
 for fn in glob("*.html"):
-    with open(fn, "r") as f:
+    with open(fn, "r", encoding="utf-8") as f:
         soup = BeautifulSoup(f.read(), "html.parser")
     print("File", fn)
     books = soup.find_all("h2", {"id": {re.compile(r"^chap_\d+")}})
