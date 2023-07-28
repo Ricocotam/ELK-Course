@@ -13,7 +13,7 @@ for book in tqdm(soup.find_all("li", {"class": "booklink"})):
     title = book.find("span", {"class": "title"}).text
     url = link_format.format(text_id=text_id)
     resp = requests.get(url)
-    with open(title + ".html", "w") as f:
+    with open(title + ".html", "w", encoding="utf-8") as f:
         f.write(resp.content.decode("utf-8"))
 
 
