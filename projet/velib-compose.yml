@@ -1,0 +1,15 @@
+
+services:
+  producer:
+    cpu_count: 4
+    image: python:3
+    command: sh /myfiles/script.sh
+    volumes:
+      - shared-data:/data:z
+      - .:/myfiles:rw
+
+volumes:
+  shared-data:
+    external: true
+    name: shared-data
+

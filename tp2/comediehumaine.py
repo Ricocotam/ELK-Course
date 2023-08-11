@@ -29,7 +29,7 @@ for url in tqdm(urls):
     title = url.split("/")[-1]
     title = title.replace(".utf-8", "")
     resp = requests.get(url)
-    with open(title, "w") as f:
+    with open(f"data/{title}", "w") as f:
         f.write(resp.content.decode("utf-8"))
 
 

@@ -7,6 +7,6 @@ if __name__ == "__main__":
     with open(fn, "r") as f:
         for ln, lc in enumerate(f.readlines()):
             r = random.random()
-            time.sleep(1 + r - 0.5)
+            time.sleep(r / 2)
             print(f"{fn} #{ln} - {lc}")
 
